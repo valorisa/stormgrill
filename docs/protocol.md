@@ -45,7 +45,7 @@ Quand un fait vérifié par la Storm contredit une hypothèse du décideur, l'in
 
 ### Architecture
 
-```
+```text
 src/stormgrill/storm/
 ├── models.py       # Source, Verdict, AgentReport, StormResult
 ├── cache.py         # Pipeline en Sablier (TTL cache + Kill & Fork via invalidate())
@@ -130,7 +130,7 @@ When a Storm-verified fact contradicts a decision-maker's assumption, injection 
 
 ### Architecture
 
-```
+```text
 src/stormgrill/storm/
 ├── models.py       # Source, Verdict, AgentReport, StormResult
 ├── cache.py         # Hourglass Pipeline (TTL cache + Kill & Fork via invalidate())
