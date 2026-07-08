@@ -17,7 +17,7 @@ Most strategic decisions are made on a mix of intuition, incomplete research, an
 
 ## How it works
 
-```
+```text
 ┌─────────────┐        cache (hourglass pipeline)        ┌─────────────┐
 │    STORM    │ ─────────────────────────────────────▶  │    GRILL    │
 │ 5 expert     │   filtered gateway, one-way only         │ adversarial │
@@ -80,7 +80,7 @@ stormgrill fuse --storm reports/latest.json --grill sessions/latest.json --out r
 
 ## Project structure
 
-```
+```text
 stormgrill/
 ├── src/stormgrill/
 │   ├── core/          # Orchestrator, Hourglass Pipeline, Framing Sentinel, Kill & Fork
