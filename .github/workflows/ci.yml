@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+    branches: [main, dev]
+
+jobs:
+  markdownlint:
+    name: Markdown Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: DavidAnson/markdownlint-cli2-action@v23
+        with:
+          globs: "**/*.md"
+
+  python-lint-test:
+    name: Python Lint & Tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v5
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install project
+        run: pip install -e ".[dev]"
+      - name: Ruff lint
+        run: ruff check src/ tests/
+      - name: Mypy
+        run: mypy src/stormgrill --ignore-missing-imports
+        continue-on-error: true
+      - name: Pytest
+        run: pytest -v
