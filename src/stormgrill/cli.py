@@ -6,21 +6,13 @@ are stubbed pending V1/V2.
 
 import typer
 
+from .storm.cli import storm_app
+
 app = typer.Typer(
     name="stormgrill",
     help="Decision Intelligence Orchestrator — Storm (research) + Grill (interrogation).",
 )
-
-
-@app.command()
-def storm(
-    topic: str = typer.Argument(..., help="Research topic for the Storm run."),
-    agents: int = typer.Option(5, help="Number of expert agents to deploy."),
-    out: str = typer.Option("reports/", help="Output directory for the report."),
-) -> None:
-    """Run a Storm research session: N expert agents, Phase 4b verification, HTML report."""
-    typer.echo(f"[V0 stub] Would run Storm on '{topic}' with {agents} agents -> {out}")
-    raise NotImplementedError("Storm orchestration is not implemented yet. See docs/roadmap.md#v0.")
+app.add_typer(storm_app, name="storm")
 
 
 @app.command()

@@ -1,0 +1,7 @@
+{
+  "config": {
+    "MD013": false
+  },
+  "globs": ["**/*.md"],
+  "ignore": ["node_modules", ".venv", "dist", "build"]
+}
