@@ -17,7 +17,7 @@ La plupart des décisions stratégiques reposent sur un mélange d'intuition, de
 
 ## Fonctionnement
 
-```
+```text
 ┌─────────────┐     cache (pipeline en sablier)     ┌─────────────┐
 │    STORM     │ ───────────────────────────────▶  │    GRILL     │
 │ 5 agents      │  passerelle filtrée, sens unique    │ interrogatoire│
@@ -80,7 +80,7 @@ stormgrill fuse --storm reports/latest.json --grill sessions/latest.json --out r
 
 ## Structure du projet
 
-```
+```text
 stormgrill/
 ├── src/stormgrill/
 │   ├── core/          # Orchestrateur, Pipeline en Sablier, Sentinelle de Cadrage, Kill & Fork
