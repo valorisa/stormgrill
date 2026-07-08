@@ -31,20 +31,20 @@ Most strategic decisions are made on a mix of intuition, incomplete research, an
 
 ```text
 ┌─────────────┐        cache (hourglass pipeline)        ┌─────────────┐
-│    STORM    │ ─────────────────────────────────────▶  │    GRILL    │
-│ 5 expert     │   filtered gateway, one-way only         │ adversarial │
-│ agents,      │   (Storm never sees the chat;             │ interrogation│
-│ parallel     │    Grill only sees verified Storm output) │ on your plan │
-│ research     │                                           │              │
-└─────────────┘                                           └─────────────┘
+│    STORM      │ ────────────────────────────────▶  │    GRILL      │
+│ 5 expert      │   filtered gateway, one-way only         │ adversarial    │
+│ agents,       │   (Storm never sees the chat;            │ interrogation  │
+│ parallel      │    Grill only sees verified Storm output)│ on your plan   │
+│ research      │                                          │                │
+└─────────────┘                                          └─────────────┘
         │                                                         │
         └──────────────────────┬──────────────────────────────────┘
                                 ▼
                        ┌─────────────────┐
-                       │      FUSION      │
-                       │  single HTML      │
+                       │      FUSION       n│
+                       │  single HTML       │
                        │  report, end of    │
-                       │  session, < 60s     │
+                       │  session, < 60s    │
                        └─────────────────┘
 ```
 
