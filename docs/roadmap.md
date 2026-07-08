@@ -8,14 +8,21 @@
 
 **Objectif** : prouver que l'orchestrateur peut produire un rapport HTML vérifié en moins de 5 minutes sur un sujet donné.
 
-- [ ] Orchestrateur CLI (`stormgrill storm <sujet>`)
-- [ ] 5 agents experts paramétrables : Praticien, Académique, Sceptique, Économiste, Historien
-- [ ] Vérification Phase 4b : chaque citation confrontée à sa source primaire
-- [ ] Score de fiabilité 1-10 (hiérarchie : causal évalué > donnée officielle > rapport > sondage > analogie > preprint)
-- [ ] Bannière de vérification (X inventée, Y corrigée, Z rétrogradée)
+- [x] Orchestrateur CLI (`stormgrill storm search <sujet>`)
+- [x] Modèles de données (`models.py`), cache TTL (`cache.py`), pipeline (`pipeline.py`)
+- [x] 5 agents experts paramétrables : Praticien, Académique, Sceptique, Économiste, Historien
+      — **structure réelle, exécution mockée** (voir `docs/protocol.md`, section Implémentation)
+- [x] Vérification Phase 4b — **réelle mais partielle** : joignabilité HTTP confirmée, comparaison
+      sémantique claim/source reportée en V1 (voir `docs/protocol.md`)
+- [ ] Recherche réelle des agents (remplacer `_mock_agent_call`) — **reste à faire pour un V0 complet**
+- [ ] Comparaison sémantique claim/source dans le vérificateur — **V1**
+- [ ] Score de fiabilité 1-10 (hiérarchie : causal évalué > donnée officielle > rapport > sondage > analogie > preprint) — **V1**
+- [ ] Bannière de vérification (X inventée, Y corrigée, Z rétrogradée) — nécessite la comparaison sémantique
 - [ ] Export HTML simple (sans Grill)
 
-**Critère de succès** : rapport HTML vérifié en < 5 min sur un sujet donné.
+**Critère de succès** : rapport HTML vérifié en < 5 min sur un sujet donné. **Pas encore atteint** :
+le pipeline tourne de bout en bout, mais les résumés d'agents sont mockés et il n'y a pas encore
+d'export HTML — seulement JSON.
 
 ### V1 — Le Grill
 
@@ -59,14 +66,21 @@
 
 **Goal**: prove the orchestrator can produce a verified HTML report in under 5 minutes on a given topic.
 
-- [ ] CLI orchestrator (`stormgrill storm <topic>`)
-- [ ] 5 configurable expert agents: Practitioner, Academic, Skeptic, Economist, Historian
-- [ ] Phase 4b verification: every citation checked against its primary source
-- [ ] 1-10 reliability score (hierarchy: evaluated causal > official data > report > survey > analogy > preprint)
-- [ ] Verification banner (X fabricated, Y corrected, Z downgraded)
+- [x] CLI orchestrator (`stormgrill storm search <topic>`)
+- [x] Data models (`models.py`), TTL cache (`cache.py`), pipeline (`pipeline.py`)
+- [x] 5 configurable expert agents: Practitioner, Academic, Skeptic, Economist, Historian
+      — **real structure, mocked execution** (see `docs/protocol.md`, Implementation section)
+- [x] Phase 4b verification — **real but partial**: HTTP reachability confirmed, claim/source
+      semantic comparison deferred to V1 (see `docs/protocol.md`)
+- [ ] Real agent research (replace `_mock_agent_call`) — **remaining work for a complete V0**
+- [ ] Claim/source semantic comparison in the verifier — **V1**
+- [ ] 1-10 reliability score (hierarchy: evaluated causal > official data > report > survey > analogy > preprint) — **V1**
+- [ ] Verification banner (X fabricated, Y corrected, Z downgraded) — needs semantic comparison
 - [ ] Simple HTML export (no Grill)
 
-**Success criterion**: verified HTML report in < 5 min on a given topic.
+**Success criterion**: verified HTML report in < 5 min on a given topic. **Not yet met**: the
+pipeline runs end-to-end, but agent summaries are mocked and there is no HTML export yet — JSON
+only.
 
 ### V1 — The Grill
 

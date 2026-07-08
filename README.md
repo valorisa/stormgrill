@@ -1,16 +1,4 @@
-<div align="left">
-
 # StormGrill — Decision Intelligence Orchestrator
-
-[![CI](https://github.com/valorisa/stormgrill/actions/workflows/ci.yml/badge.svg)](https://github.com/valorisa/stormgrill/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![markdownlint](https://img.shields.io/badge/markdownlint-passing-brightgreen.svg)](https://github.com/DavidAnson/markdownlint-cli2)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
-[![Project Status: WIP](https://img.shields.io/badge/status-WIP-yellow.svg)](https://github.com/valorisa/stormgrill)
-
-</div>
 
 [🇫🇷 Version française](README.fr.md)
 
@@ -29,7 +17,7 @@ Most strategic decisions are made on a mix of intuition, incomplete research, an
 
 ## How it works
 
-```text
+```
 ┌─────────────┐        cache (hourglass pipeline)        ┌─────────────┐
 │    STORM    │ ─────────────────────────────────────▶  │    GRILL    │
 │ 5 expert     │   filtered gateway, one-way only         │ adversarial │
@@ -92,7 +80,7 @@ stormgrill fuse --storm reports/latest.json --grill sessions/latest.json --out r
 
 ## Project structure
 
-```text
+```
 stormgrill/
 ├── src/stormgrill/
 │   ├── core/          # Orchestrator, Hourglass Pipeline, Framing Sentinel, Kill & Fork
