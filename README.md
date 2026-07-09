@@ -5,7 +5,7 @@
 [![CI](https://github.com/valorisa/stormgrill/actions/workflows/ci.yml/badge.svg)](https://github.com/valorisa/stormgrill/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Linting: ruff](https://img.shields.io/badge/linting-ruff-blue.svg)](https://github.com/astral-sh/ruff)
 [![markdownlint](https://img.shields.io/badge/markdownlint-passing-brightgreen.svg)](https://github.com/DavidAnson/markdownlint-cli2)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 [![Project Status: WIP](https://img.shields.io/badge/status-WIP-yellow.svg)](https://github.com/valorisa/stormgrill)
@@ -16,11 +16,14 @@
 
 > Make bad strategic decisions expensive to make.
 
-StormGrill is an open-source dual-protocol orchestrator that pairs **verified multi-agent research** (the Storm) with **real-time adversarial interrogation** (the Grill) to help decision-makers — CTOs, Lead Architects, Heads of Product — stress-test a decision against facts, not intuition.
+StormGrill is an open-source dual-protocol orchestrator that pairs **verified multi-agent research** (the Storm) with
+**real-time adversarial interrogation** (the Grill) to help decision-makers — CTOs, Lead Architects, Heads of Product —
+stress-test a decision against facts, not intuition.
 
 ## Why
 
-Most strategic decisions are made on a mix of intuition, incomplete research, and confirmation bias. StormGrill doesn't replace the decision-maker. It:
+Most strategic decisions are made on a mix of intuition, incomplete research, and confirmation bias. StormGrill doesn't
+replace the decision-maker. It:
 
 - Surfaces confirmation bias in real time
 - Forces a confrontation between intuition and verified facts
@@ -46,20 +49,21 @@ Most strategic decisions are made on a mix of intuition, incomplete research, an
                        │  report, end of    │
                        │  session, < 60s    │
                        └─────────────────┘
-```
+```text
 
 **Core principles validated during design (see [docs/protocol.md](docs/protocol.md)):**
 
 | Branch | Decision | Guarantee |
 |---|---|---|
-| A — Context isolation | Storm researches blind; Grill consumes Storm through a filtered gateway | No cross-contamination; explicit pivots trigger Kill & Fork |
-| B — Async delivery | Single fused HTML report at session end, < 60s assembly | Section-based merge (Insights, Guide, Action) |
-| C — Resource priority | Grill has absolute network preemption; Storm runs in "Hourglass Pipeline" | < 8s latency constraint on Grill turns |
-| D — Contradiction resolution | Storm facts injected asynchronously, next turn — never mid-turn | Triage by criticality: SLA > Performance > Cost |
+| A — Context isolation | Storm blind; Grill sees Storm via a filtered gateway | No contamination; Kill & Fork |
+| B — Async delivery | Single fused HTML report at session end, < 60s | Section-based merge (Insights, Guide, Action) |
+| C — Resource priority | Grill has network preemption; Storm runs "Hourglass" | < 8s latency on Grill turns |
+| D — Contradiction resolution | Storm facts injected async, next turn | Triage: SLA > Performance > Cost |
 
 ## Status
 
-🚧 **Pre-V0 / scaffold.** Architecture defined, protocol validated by stress-test and one real-world execution run. Implementation starts at [V0](docs/roadmap.md#v0--proof-of-concept).
+🚧 **Pre-V0 / scaffold.** Architecture defined, protocol validated by stress-test and one real-world execution run.
+Implementation starts at [V0](docs/roadmap.md#v0--proof-of-concept).
 
 ## Roadmap
 
@@ -88,7 +92,7 @@ pip install -e ".[dev]"
 stormgrill storm "state of vector databases in production, 2026" --agents 5 --out reports/
 stormgrill grill --plan my_decision.yaml
 stormgrill fuse --storm reports/latest.json --grill sessions/latest.json --out report.html
-```
+```text
 
 ## Project structure
 
@@ -117,4 +121,5 @@ MIT — see [LICENSE](LICENSE).
 
 ## Author
 
-Bertrand ([@valorisa](https://github.com/valorisa)) — designed through a double-loop meta-analysis: a stress-test of the orchestration protocol itself, followed by a real-world execution run.
+Bertrand ([@valorisa](https://github.com/valorisa)) — designed through a double-loop meta-analysis: a stress-test of the
+orchestration protocol itself, followed by a real-world execution run.

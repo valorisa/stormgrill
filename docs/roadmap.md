@@ -6,7 +6,8 @@
 
 ### V0 — Proof of Concept
 
-**Objectif** : prouver que l'orchestrateur peut produire un rapport HTML vérifié en moins de 5 minutes sur un sujet donné.
+**Objectif** : prouver que l'orchestrateur peut produire un rapport HTML vérifié en moins de 5 minutes sur un sujet
+donné.
 
 - [x] Orchestrateur CLI (`stormgrill storm search <sujet>`)
 - [x] Modèles de données (`models.py`), cache TTL (`cache.py`), pipeline (`pipeline.py`)
@@ -16,7 +17,8 @@
       sémantique claim/source reportée en V1 (voir `docs/protocol.md`)
 - [ ] Recherche réelle des agents (remplacer `_mock_agent_call`) — **reste à faire pour un V0 complet**
 - [ ] Comparaison sémantique claim/source dans le vérificateur — **V1**
-- [ ] Score de fiabilité 1-10 (hiérarchie : causal évalué > donnée officielle > rapport > sondage > analogie > preprint) — **V1**
+- [ ] Score de fiabilité 1-10 (hiérarchie : causal évalué > donnée officielle > rapport > sondage > analogie > preprint)
+      — **V1**
 - [ ] Bannière de vérification (X inventée, Y corrigée, Z rétrogradée) — nécessite la comparaison sémantique
 - [ ] Export HTML simple (sans Grill)
 
@@ -41,7 +43,8 @@ d'export HTML — seulement JSON.
 
 - [ ] Pipeline en Sablier (Storm en avance pendant le cadrage)
 - [ ] Sentinelle de Cadrage + Kill & Fork
-- [ ] Template HTML enrichi (Résumé 60s, Enseignements avec score de fiabilité, Guide Sûr/Réserve/Éviter, Plan d'action, Question de frontière)
+- [ ] Template HTML enrichi (Résumé 60s, Enseignements avec score de fiabilité, Guide Sûr/Réserve/Éviter, Plan d'action,
+      Question de frontière)
 - [ ] Journal de bord du Grill (décisions qui ont tenu/cédé)
 - [ ] Mode « Rapport de Rupture »
 
@@ -74,7 +77,8 @@ d'export HTML — seulement JSON.
       semantic comparison deferred to V1 (see `docs/protocol.md`)
 - [ ] Real agent research (replace `_mock_agent_call`) — **remaining work for a complete V0**
 - [ ] Claim/source semantic comparison in the verifier — **V1**
-- [ ] 1-10 reliability score (hierarchy: evaluated causal > official data > report > survey > analogy > preprint) — **V1**
+- [ ] 1-10 reliability score (hierarchy: evaluated causal > official data > report > survey > analogy > preprint) —
+      **V1**
 - [ ] Verification banner (X fabricated, Y corrected, Z downgraded) — needs semantic comparison
 - [ ] Simple HTML export (no Grill)
 
@@ -99,7 +103,8 @@ only.
 
 - [ ] Hourglass Pipeline (Storm gets ahead during framing)
 - [ ] Framing Sentinel + Kill & Fork
-- [ ] Enriched HTML template (60s Summary, Insights with reliability score, Safe/Caution/Avoid guide, Action Plan, Frontier Question)
+- [ ] Enriched HTML template (60s Summary, Insights with reliability score, Safe/Caution/Avoid guide, Action Plan,
+      Frontier Question)
 - [ ] Grill session log (decisions that held/gave way)
 - [ ] "Breakdown Report" mode
 
